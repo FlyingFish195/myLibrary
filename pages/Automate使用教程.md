@@ -1,5 +1,5 @@
 - Automate:
-  title:: Automate
+  title:: Automate使用教程
 - 排列：
   1、两对象互换位置
   2、两对象基于中心互换位置
