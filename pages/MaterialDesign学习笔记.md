@@ -28,8 +28,114 @@
 	  Material Design定义了可以由UI区域(UI region)、表面(surface)和组件(component)表达的品质。使用从广泛和详细的角度解决设计问题的基础来设计和制定应用程序的构建方式。
 	- 环境(Environment)
 		- 表面(surface)
-		  Material Design具有三维特性(three-dimensional qualities)，这体现在它对表面、深度和阴影的使用上
-		- 海拔(elevation)
+		  collapsed:: true
+		  Material Design具有三维特性(three-dimensional qualities)，这体现在它对表面、深度和阴影的使用上。
+			- ^^物质环境(Material environment)^^
+				- 物理世界(The physical world)
+				  在物理世界中，物体可以堆叠(stack)或相互连接，但是不能相互穿过。它们投射阴影并反射光。
+				  Material Design 通过表面(surface)的显示和在UI中的移动规则来展示物理世界的这些品质。表面以及他们如何在三个维度中移动，与一种类似于在物理世界中移动的方式进行方法上的交流学习。这种空间模型可以在应用程序中一致地应用。
+				- 深度(Depth)
+				  Material Design显示在使用光、表面、和投射阴影表达3D空间的环境中。Material环境中的所有元素都沿着Z轴水平、垂直和以不同的深度移动。*深度是通过在沿Z轴正方向向观察者延伸的各个点放置元素来描绘。*
+				  在Web上，用户界面通过操纵(manipulate)Y轴来表达3D空间。
+			- ^^特性(Properties)^^
+			  collapsed:: true
+			  Material 表面在整个材料设计中有一致的、不可改变的特性(characteristics)和行为(behaviors)。
+				- 尺寸(Dimensions)
+				  Material具有不同的x和y尺寸(以dp为单位)和均匀的厚度(1dp)。
+				- 阴影(Shadows)
+				  不同高度的Material 表面投射不同阴影。
+				- 分辨率(Resolution)
+				  Material具有无限分辨率
+				- 内容(content)
+				  内容以任何形状和颜色显示在Material上。内容不会增加Material的厚度。内容不会以单独的层展现。
+					- Material可以显示任何形状和颜色。内容的行为可以独立于Material，但是仅限于Material的边界范围内。
+					- 内容行为可以独立于表面行为。
+					- 内容行为可以取决于表面行为。
+				- 物理特性(Physical properties)
+					- Material是固态的。用户输入和交互不能穿透Material表面。
+					  				* 输入事件只影响材质的表面
+					  				* 输入事件不能通过Material表面
+					- 多个Material元素不能同时占据空间中的同一点。
+					  				* 防止多个Material元素同时占据空间中的同一点，例如通过使用高程(elevation)分隔元素。
+					- Material不能穿透另一个Material。例如，当改变高程时，一个Material表面不能穿透另一个Material表面。
+					- Material的行为不像气体。
+					  				* Material通过透明度、大小和位置的变化进出。
+					- Material不像液体或凝胶那样具有流动性，但他可能会显示具有流体特性的内容
+				- 变换材料(Transforming Material)
+					- Material可以改变形状
+					- Material可以改变透明度
+					  				* Material可以在其整个表面均匀的改变不透明度
+					  				* Material可以改变其表面一部分的不透明度
+					- Material仅沿其平面生长和收缩
+					- Material在UI深度内弯曲或折叠。
+					- Material表面可以连接在一起成为单一的Material表面
+					- 拆分时，Material可以重新连接。例如，如果您从表面移除一部分材料，该表面将再次变得完整。
+				- 移动(Movement)
+					- Material可以在环境中的任何地方自发生成或消除。
+					- Material可以沿任何轴移动
+					- Material表面可以协调运动
+					- Material沿Z轴运动通常是用户交互的结果
+			- ^^属性(Attributes)^^
+			  collapsed:: true
+				- 基础Material表面(Basic Material surface)
+				  基础的Material表面是不透明的白色，厚度为1dp，并投射阴影。所有的UI元素都源于对该表面的修改。
+				- 行为(Behavior)
+				  Material表面以一些特定的行为表现：
+				  			* 刚性表面(Rigid surfaces)：在所有交互中保持相同的大小
+				  			* 可拉伸表面(Stretchable surfaces)：可以沿着一条或多条边生长和收缩到一定尺寸的限制，然后表现为刚性表面。
+				  			* 平移表面(Pannable surfaces)：在整个交互中保持相同的大小。可以在区域内滚动显示其他内容，直到达到内容限制。材料表面尺寸可以保持刚性，但内容可以在表面上滚动或平移。
+					- 复合表面(composite surfaces)：表面可以分为显示不同类型行为的区域。
+					  				* 单个表面可以包含多个可平移表面
+					  				* 卡片可以拉伸以显示独立于卡片其他内容的滚动区域
+				- 可拉伸表面(Stretchable surfaces)：
+				  可拉伸表面在达到限制点成为刚性表面之前可以拉伸。表面可以垂直、水平或双向拉伸。
+				  通常，用户与表面的交互会使其向一个方向拉伸。
+					- Material拉伸的方向可以完全是垂直的。
+					- Material拉伸的方向可以完全是水平的。
+					- Material可以独立或同时沿水平和垂直的轴拉伸。
+				- 表面定位和位移(Surface positioning and movement<x/y>)
+				  表面可以在X轴和Y轴保持固定的位置，也可以沿任何方向移动。
+					- 表面运动可以限制在单个轴上，允许运动沿着单个轴运动，或允许运动同时沿着两个轴运动。
+					- 表面可以彼此独立的运动，或者他们的运动可以影响或依赖其他表面的运动。
+					  相关性可以基于各种机制(mechanics)，例如附近的表面在另一个表面膨胀时移动，或者在视差中移动的表面之间的运动比例。
+				- 表面不透明度(Surface opacity)
+				  Material表面可以是透明、半透明或不透明的。
+					- 透明和半透明的表面上的文本可能需要进行背景处理以保持可读性。
+					- 透明表面缺少清晰的边缘，因此很难确定表面的起点和终点以及表面内容所属的位置。
+				- 遮罩层(Scrim)
+				  遮罩层是临时处理，可以应用于Material表面，目的是让表面上的内容不那么突出显眼。它们引导用户的注意力到屏幕的其他地方，远离覆盖遮罩层的区域。
+				  遮罩层可用多种方式实现：
+				  			* 使表面和其内容变暗或变亮
+				  			* 减少表面和其内容的透明度
+				   屏幕上的多个表面可以同时覆盖遮罩层。遮罩层可以出现在任何高程，无论前景还是背景。
+		- 高度(Elevation) 
+		  高度是两个表面沿着Z轴的相对距离(relative distance)。
+			- Material Design中的高度(Elevation in Material Design)
+				- 测量高度(Measure elevation)
+				  			* 在Material Design中，高度就是两个Material表面之间测量的距离。从一个Material表面前部到另一个Material表面前部的距离是沿着Z轴以密度无关的(density-independent)像素进行测量，并（默认情况下）使用阴影来表示。
+				  			* 当其他表面出现在背后时，同一高度的表面可能会以不同的方式出现。
+				- 高度系统(The elevation system)
+				  所有的Material表面和组件都有高度值。
+				  不同高度的表面都执行以下操作：
+				  			* 允许表面在其他表面前后移动，例如内容在应用栏背后滚动。
+				  			* 反映空间关系，例如浮动操作按钮的阴影表明它和卡片集合是分开的。
+				  			* 注意力集中在最高的高度上，例如临时出现在其他表面前面的对话框
+				   可以使用阴影或其他视觉提示（表面填充或不透明度）来显示高程。
+				- 默认高度(Resting elevation)
+				  默认高度是默认情况下组件的起始高度。为响应用户交互或系统事件，组件从默认高度移动。所有Material组件中同类型的组件的高度是一致的。例如，所有卡片具有彼此相同的默认高度，对话框也有相同的高处。
+				  			* 默认高度和环境：默认高度因环境、平台和应用而异。移动端的默认高度旨在提供视觉提示，如阴影，表明组件是可以交互的。相反，**桌面端的默认高度就更浅**，因为其他提示（悬浮状态）会在组件交互时显示。
+				- 可变高度(Changing elevation)
+				  组件可以改变高度以响应用户输入和系统事件。发生这种情况时，组件移动到预设的**高度动态补偿值**(dynamic elevation offsets)，这是组件未静止时移动到的默认高度。
+				  			* 每种类型的组件的高度动态补偿值是一样的。例如，所有卡片使用相同的偏移量，所有浮动操作按钮也使用相同的偏移量。
+				  			* 一旦用户输入（系统事件）完成或取消，组件迅速返回其默认高度。
+				  			* 有些组件通过减少高度来响应用户输入
+				- 高度冲突(Elevation interference)
+				  当组件在其默认高度和动态高度补偿值之间进行移动时，不应与其他组件发生碰撞。
+				  			* 为了避免发生碰撞，可将障碍组件移开。例如，如果增加一个卡片的高度位置，它就会穿过其上浮动操作按钮，可以通过让按钮消失或移除屏幕来避免冲突。
+				  			* 也可以重新架构应用的布局来避免这种冲突，例如将浮动操作按钮放置在卡片旁边，而不是直接置于其上。
+			- 描绘高度(Depicting elevation)
+			- 高度层级关系(Elevation hierarchy)
+			- 默认高度(Default elevation)
 		- 光与影(Light and shadows)
 	- 布局(Layout)
 		- 了解布局(Understanding layout)
