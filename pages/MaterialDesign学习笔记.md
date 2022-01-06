@@ -271,8 +271,14 @@
 				- 屏幕密度变化(screen density variations)
 				  高密度屏幕(high-density screens)的每英寸像素数比低密度屏幕(low-density screens)多。因此，相同像素数量的UI元素在低密度像素屏幕上显得更大，而在高密度屏幕上显得小。
 				- 计算像素密度(calculating pixel density)
-			- 密度独立(density independence)
-			- Andriod上的像素密度(pixel density on Android)
+				  $$屏幕密度=以像素为单位的屏幕宽度（或高度）/ 以英寸为单位的屏幕宽度（或高度）$$
+				  + 高密度显示
+				  ![2022_01_06_unnamed.png](https://cdn.logseq.com/%2F95018d4c-669b-4f2c-ba55-a52b94e8b69d87219701-61c2-4abe-b0ac-6848d7e234622022_01_06_unnamed.png?Expires=4795076979&Signature=MGnz9vo8VgTxIsyHMZkyYWK7xhJnSm-LKQcnfXB7eNpWqTNvmByi9osLaYyfeA6aHiCpdPZq1wAWlrA7Q1rgk-03OA0ByTUJWAwstA8wleAEATUNqfzgQBbPa9zShZV41Mf~CMZjbbyRR5GsmtUznpFrqLde8q9fC7x3FM9Xu0sg09jdq1l8PF5b5dx-6YJzN3XAR9FdVKFPFKUEUQ~Ra3NHgOimzu70yehAomig-B5mmeA9UQINaaJe7aWmlevF~oq038T5N1qKJU2UIS~~lOy1XcgQh6taYsMiZuiWYXG~s8AmViGgnBIBlZ2pf40xWAhIzNiI12XOpINEEnFcFg__&Key-Pair-Id=APKAJE5CCD6X7MP6PTEA){:height 340, :width 337} 
+				  + 低密度显示
+				  ![2022_01_06_unnamed (1).png](https://cdn.logseq.com/%2F95018d4c-669b-4f2c-ba55-a52b94e8b69d83be916f-ca16-408e-83d6-0e47f354bba42022_01_06_unnamed%20%281%29.png?Expires=4795077034&Signature=kZc8y241NdxPOO5FfesmJ7J70Q67gr9zVn7X79EE5piOHTbnqkeMbMX8TDWJPfCX1BthfjlWqBcC43h5YpyNCEWthS757VpFVeuW3vKxhC9lGl-g7isV4MJoWpD78EzgxNNT0did6n94Vn~Vq5LnqMVNB7BwhV9ZXkoktDYtGznPya52U6a8IgpvEfcII0L9Rs09NFr8bKOYvRbFCJ8PI6cukQJbmOZRaPJG-F2Fy~e65fF2omax~qIYD5SWtKoNspTx16ecRguBs43Bw3nEeCTFp-6w5W1KUM~Rvq0W2W6Mbz-niPqdlTJQ33CoDbhwGb2sSUnU15cZZnbeZgonIA__&Key-Pair-Id=APKAJE5CCD6X7MP6PTEA){:height 340, :width 337}
+			- 密度独立性(density independence)
+			  密度独立性是指在不同密度的屏幕上同意显示UI元素。
+			- Andriod上的像素密度(pixel density on Android)/
 			- IOS上的像素密度(pixel density on IOS)
 			- Web上的像素密度(pixel density on the web)
 		- 响应式布局网格(Responsive layout grid)
