@@ -28,6 +28,7 @@
 	  Material Design定义了可以由UI区域(UI region)、表面(surface)和组件(component)表达的品质。使用从广泛和详细的角度解决设计问题的基础来设计和制定应用程序的构建方式。
 	- 环境(Environment)
 		- 表面(surface)
+		  collapsed:: true
 		  Material Design具有三维特性(three-dimensional qualities)，这体现在它对表面、深度和阴影的使用上。
 			- ^^物质环境(Material environment)^^
 			  collapsed:: true
@@ -108,8 +109,10 @@
 				  			* 减少表面和其内容的透明度
 				   屏幕上的多个表面可以同时覆盖纱布层。纱布层可以出现在任何高程，无论前景还是背景。
 		- 高度(Elevation) 
+		  collapsed:: true
 		  高度是两个表面沿着Z轴的相对距离(relative distance)。
 			- Material Design中的高度(Elevation in Material Design)
+			  collapsed:: true
 				- 测量高度(Measure elevation)
 				  			* 在Material Design中，高度就是两个Material表面之间测量的距离。从一个Material表面前部到另一个Material表面前部的距离是沿着Z轴以密度无关的(density-independent)像素进行测量，并（默认情况下）使用阴影来表示。
 				  			* 当其他表面出现在背后时，同一高度的表面可能会以不同的方式出现。
@@ -133,6 +136,7 @@
 				  			* 为了避免发生碰撞，可将障碍组件移开。例如，如果增加一个卡片的高度位置，它就会穿过其上浮动操作按钮，可以通过让按钮消失或移除屏幕来避免冲突。
 				  			* 也可以重新架构应用的布局来避免这种冲突，例如将浮动操作按钮放置在卡片旁边，而不是直接置于其上。
 			- 描绘高度(Depicting elevation)
+			  collapsed:: true
 			  要成功描绘出高度，表面必须显示：
 			  + 表面边缘(edges)，让表面与周围环境形成鲜明对比
 			  + 与其他表面重叠(overlap)，无论静止还是运动
@@ -148,16 +152,129 @@
 				  当一个面与另一个面部分或完全重叠时，表明这两个面所处的高度不同（但不是他们之间差异的程度和数量）。高处的表面出现在低处表面的前面，意味着它们沿着X轴被定位在不同的高度上。表面可能在默认情况下相互重叠，或者由于运动改变了它们在UI中的位置而变得重叠。
 				  当表面有不同的透明度或相互之间的对比度不足时，会使人很难分辨哪个表面在另一个前面。通过确保明确的界定边缘来避免模糊的重叠。
 				- 距离(distance)
+				  collapsed:: true
 				  表面之间的高度差程度可以用纱布背景(scrimmed backgrounds)，或阴影来表达。
-					- 纱布背景(scrimmed backgrounds)
-					- 阴影(shadows)
-				- 运动和高度(motion and elevation)
+					- 纱布背景(Scrimmed backgrounds)
+					  当UI中的背景被遮罩时，表明其上的内容处于更高的高度。 纱布背景表达了大量且未指定(unspecified)的高度。
+					  	* **纱布背景可以表示表面重叠，但不能表示高度。**
+					- 阴影(Shadows)
+					  阴影可以实现其他方式无法表达的两个表面之间的高度。
+					  阴影的大小和柔和度(softness)或弥散度(diffusion)都能表示两个表面之间的距离。例如，具有小而清晰的阴影的表面表示该表面与其后面的表面更接近。相反，更大、更柔和的阴影表示更远的距离。
+					  阴影大小和扩散的细微差别传达了：
+					  	* 两个表面之间距离的详细程度
+					  	* 非重叠表面之间的高度差
+				- 动效和高度(motion and elevation)
+				  collapsed:: true
+				  动效可以使用以下方式强调高度：
+					- 阴影的变化(changing in shadows)
+					  阴影大小和柔和度的变化强调了高度的变化
+					- 显示重叠(displaying overlap)
+					  一个表面在动画中部分或完全重叠另一个表面，显示了此表面在另一个表面前面。
+					- 推动(pushing)
+					  具有相同高度的表面可以在它们的路径上移动表面。
+					- 缩放(scaling)
+					  向上或向下缩放表面可以强调高度变化
+					- 视差(Parallax)
+					  **不同高度的多个表面以不同速度移动会产生深度感并将焦点聚集在前景内容上。**
+					- 结合动效结束(combining motion techniques)
+					  可以通过组合动效来强调高度。
 			- 高度层级关系(Elevation hierarchy)
+			  collapsed:: true
+			  内容之间的关系取决于它们是否处于相似或不同的高度。
+				- 不同高度的内容(content at different elevations)
+				  一个表面前面的表面通常：
+				  		* 包含更重要的内容
+				  		* 集中注意力，例如对话框
+				  		* 控制其后的表面，例如应用栏中的操作
+				- 共面内容(content on coplanar surfaces)
+				  		* 将表面定位在同一高度使它们共面，并暗示它们包含彼此相同重要的内容。例如，集合中的所有卡片都具有同等重要性。
+				  		* 不表示高度的表面看起来是共面的。对于不表示高度的表面，可以通过它们的内容并通过调整水平和垂直的布局位置建议相对的层次级别来传达层次差异。
 			- 默认高度(Default elevation)
+			  collapsed:: true
+			  所有元素都有默认高度和高度动态补偿值的默认值。默写组件处于比其他组件更高的高度，从而在所有组件间建立一致的高度顺序(a consistent elevation)。例如，对话框总是出现在其他组件前面。
+			  + 默认高度值：
+			  + 默认高度值示意图：
 		- 光与影(Light and shadows)
+		  collapsed:: true
+		  Material 表面阻挡光源时会投射阴影。
+			- 光(light)
+				- 光与影(light and shadows)
+				  在Material Design环境中，虚拟光照亮UI。主光(key light)会产生更清晰的定向阴影，称为**关键阴影(key shadows)**。环境光(ambient light)从各个角度出现以产生漫射的柔和阴影，称为**环境阴影(ambient shadows)**。
+				- 光源(light sources)
+				  Material Design中的阴影有主光和环境光投射。在Andriod和IOS开发中，当光源沿着沿着Z轴的不同位置被表面阻挡时，就会出现阴影。在Web中，仅通过操纵Y轴来描绘阴影。
+			- 阴影(shadows)
+			  阴影提供的有关深度、运动方向和表面边缘的提示。一个表面的阴影由其高度和与其他表面的关系决定。
+				- 用法(usage)
+				  由于阴影表示表面之间的高度，因此必须在整个产品中保持一致。
+				  			* 高度通过一致使用阴影来描绘
+				  			* 阴影大小反映高度
+				- 阴影和运动(shadow and motion)
+				  阴影提供有关表面运动方向以及表面之间距离是增加还是减少的有用提示。
+				  			* 当表面改变形状或比例，但其高程保持不变，其阴影不变
+				  			* 当表面改变高程，阴影也改变。
 	- 布局(Layout)
 		- 了解布局(Understanding layout)
+		  collapsed:: true
+		  Material Design布局使用统一的元素和间距，以促进跨平台、环境和屏幕大小的一致性。
+			- 原则(Principles)
+			  collapsed:: true
+			  		* 可预测性(Predictable)：使用具有一致UI区域(consistent UI region)和空间组织(spatial organization)的直观(intuitive)和可预测的布局
+			  		* 一致性(consistent)：布局应该一致地使用网格、基线(keyline)和边距(padding)
+			  		* 响应性(responsive)：布局时自适应的。它们能对来自用户、设备和屏幕元素的输入做出反应。
+			- 布局结构(Layout anatomy)
+			  collapsed:: true
+			  **布局区域(layout regions)**是交互体验的基础。它们是布局的**构建块(building blocks)**，由具有相同功能的元素和组件构成。**布局区域还可以对较小的容器（例如卡片）进行分组。**
+			  大屏幕布局有三个主要区域：
+			  		* 应用栏(app bar)
+			  		* 导航(navigation)
+			  		* 主体(body)
+			   在创建响应式布局系统时，为主体和边距创建最小和最大的**尺寸**以及允许每个区域适应不同形状因素的**缩放行为**是有帮助的。以下指南描述了Material的基准尺寸和行为。
+				- 主体区域(body region)
+				  主体区域用来显示一个应用程序中大部分的内容。它通常包含列表、卡片、按钮和图片等组件。
+				  主体区域使用三个参数的缩放值(scaling value)：
+				  			* 垂直和水平尺寸(vertical and horizontal dimension)
+				  			* 列数(number of column)
+				  			* 边距(margins)
+				   在超小的断点处(extra small breakpoints)边距是16dp。随着布局尺寸增加，主体部分相对于屏幕宽度进行扩展。到达第一个断点(600dp)边距增加到32dp。当主体的宽度达到840dp，边距增加到最大宽度200dp。在到达这个最大宽度后，主体区域再次变得可响应。
+				   ^^响应式网格(responsive column grid)^^：响应式网格由列、槽、边距组成，为主体区域内的元素布局提供方便的结构。组件、图片和文本与列网格对其，以确保跨屏幕尺寸和方向的有逻辑且一致的布局。随着主体区域大小增大或缩小，网格列数会相应发生变化。
+				- 导航区域(navigation region)
+				  导航区域包含导航组件和元素，例如导航抽屉(navigation drawer)或导航栏(navigation rail)。它可以帮助用户在应用程序中的目的地之间导航或访问重要操作。**导航区域在展开(expand)时保持一致的256dp，折叠(collapse)时为72dp。**
+				  如果布局的边距小于48dp（例如，屏幕宽度在600dp到839dp之间），主体区域的宽度可以减小以适应导航区域。
+				  			* 当使用导航抽屉时，主体区域可以压缩以容纳导航区域
+				  			* 处于折叠状态的导航区域(72dp)可以使用导航栏。
+				  			* 如果屏幕宽度小于600dp，导航区域可以使用模态导航抽屉(modal navigation drawer)。抽屉看起来高于主体区域
+				- 应用栏(app bar)
+				  应用看用于显示和分组组件和操作，帮助用户执行主要操作，或对主体区域的元素执行操作。
+			- 构成(Composition)
+			  collapsed:: true
+				- 视觉分组(visual grouping)
+				  **在布局中创建秩序的第一步就是视觉分组**。布局中有相同内容或功能的元素可以组合在一起，并使用开放空间、排版和分割线与其它元素分开。
+				- 包含(containment)
+				  在视觉分组之后，下一组要考虑的是任何通过共享上下文达到相关的元素（即组内元素），例如图片及其标题(caption)和支持信息。这些上下文相关的元素(contextually related elements)可以使用约束的概念组合在一起。 通过在组之间创立边界来实现约束。
+				  			* 方法1：**隐式包含(implicit containment)**，通过将相关元素拉近来减少它们周围的开放空间。同时，增加了这个分组之外的空间，以创建一个独特的概念边界。
+				  			* 方法2：**显示包含(explicit containment)**，通过向一组相关元素添加**边框(outline)**或**高度层级(elevation level)**来创建。例如，根据图像及其标题或支持信息创建卡片，通过卡片升高的边界(elevated boundary)使元素定义为一组。
+				   当使用元素或组件来包含文本时，请确保每个容器使用响应式尺寸，以便文本能轻松缩放和保持可读性。
+				- 随文本缩放(scaling with text)
+				  文本的理想长度是40-60个字符。当缩放包含文本的元素（例如卡片）时能保证可读性。当元素包含文本时，边距(margin)和排版属性(typographic properties)应该是响应式的，这样能确保文本在水平布局不会延伸太长。达到最长行后，排版有助于提高可读性。
+				  如果文本必须很长的话，就要考虑调整行高(line height)来提高可读性。
+				- 锚点和约束(anchors and constraints)
+				  			* 当缩放组件或布局容器时，需要考虑它们的位置(position)及对齐方式(alignment)如何缩放。当父容器缩放时，内部元素可以锚定到左侧、右侧或者中心。内部元素也可以保持固定位置，例如当浮动操作按钮和导航抽屉的情况下。
+				  			* 组件内部的组成应适应其承载的设备的人体工程学需求(ergonomic needs)。例如，移动设备上横向卡片可以适应更大屏幕上更方形的卡片。此更改使图像更突出，并允许使用更大的字体样式来提高可读性。在图标按钮中，按钮中的图标和文本标签可以保持彼此锚定，在按钮水平缩放时保持局中。
+			- Material 距离(Material measurements)
+			  		* 为了确保Material Design视觉上保持平衡，大多数测量值都与8dp对齐，这对应间距和整体布局。组件的大小是以8dp为增量，确保每个屏幕的视觉节奏一致
+			  		* 较小的元素(例如图标)可以与4dp网格对齐，而排版可以落在4dp基线网格上，这意味着每行的排版基线与其相邻元素的间距以4dp为增量。
+			- 资源(Resources)
 		- 像素密度(Pixel density)
+		  屏幕像素密度和分辨率(resolution)因平台而异
+			- 像素密度(pixel density)
+			  一英寸内的像素数称为像素密度(ppi)
+				- 屏幕密度变化(screen density variations)
+				  高密度屏幕(high-density screens)的每英寸像素数比低密度屏幕(low-density screens)多。因此，相同像素数量的UI元素在低密度像素屏幕上显得更大，而在高密度屏幕上显得小。
+				- 计算像素密度(calculating pixel density)
+			- 密度独立(density independence)
+			- Andriod上的像素密度(pixel density on Android)
+			- IOS上的像素密度(pixel density on IOS)
+			- Web上的像素密度(pixel density on the web)
 		- 响应式布局网格(Responsive layout grid)
 		- 间距方法(Spacing method)
 		- 组件行为(Component behavior)
