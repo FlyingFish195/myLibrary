@@ -277,8 +277,12 @@
 				  + 低密度显示
 				  ![2022_01_06_unnamed (1).png](https://cdn.logseq.com/%2F95018d4c-669b-4f2c-ba55-a52b94e8b69d83be916f-ca16-408e-83d6-0e47f354bba42022_01_06_unnamed%20%281%29.png?Expires=4795077034&Signature=kZc8y241NdxPOO5FfesmJ7J70Q67gr9zVn7X79EE5piOHTbnqkeMbMX8TDWJPfCX1BthfjlWqBcC43h5YpyNCEWthS757VpFVeuW3vKxhC9lGl-g7isV4MJoWpD78EzgxNNT0did6n94Vn~Vq5LnqMVNB7BwhV9ZXkoktDYtGznPya52U6a8IgpvEfcII0L9Rs09NFr8bKOYvRbFCJ8PI6cukQJbmOZRaPJG-F2Fy~e65fF2omax~qIYD5SWtKoNspTx16ecRguBs43Bw3nEeCTFp-6w5W1KUM~Rvq0W2W6Mbz-niPqdlTJQ33CoDbhwGb2sSUnU15cZZnbeZgonIA__&Key-Pair-Id=APKAJE5CCD6X7MP6PTEA){:height 340, :width 337}
 			- 密度独立性(density independence)
-			  密度独立性是指在不同密度的屏幕上同意显示UI元素。
-			- Andriod上的像素密度(pixel density on Android)/
+			  密度独立性是指在不同密度的屏幕上统一显示UI元素。
+				- 与密度无关的像素
+				  dp：密度无关的像素，
+			- Andriod上的像素密度(pixel density on Android)
+			  在开发 Android 应用时，使用 dp 在不同密度的屏幕上统一显示元素。
+				- dp 和屏幕密度
 			- IOS上的像素密度(pixel density on IOS)
 			- Web上的像素密度(pixel density on the web)
 		- 响应式布局网格(Responsive layout grid)
