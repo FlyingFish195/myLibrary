@@ -279,11 +279,25 @@
 			- 密度独立性(density independence)
 			  密度独立性是指在不同密度的屏幕上统一显示UI元素。
 				- 与密度无关的像素
-				  dp：密度无关的像素，
+				  dp：密度无关的像素，是一种灵活的单位(unit)，在任何屏幕上都能缩放到统一的尺寸。他们提供一种灵活的方式来适应跨平台的设计。
+				  Material UI使用密度无关像素，在不同密度的屏幕上统一显示密度。
+				  ![2022_01_11_image.png](https://cdn.logseq.com/%2F95018d4c-669b-4f2c-ba55-a52b94e8b69d04f361db-96be-4ce2-8f70-bffd9819375d2022_01_11_image.png?Expires=4795508937&Signature=NCdP6XWeoAqSH0M~aM7Qj3vykGVLwj9hQam6BCrNCv7WR2SitK81uSvULGvk01Y2Oo~h3ISqLhAx479gs7ES13iBe3e6bmq0BnowmOlTWo6~oN5QmCWqfOni4XRUY16jv5iBY0GdNQtdhbEBgJ6v~JmnAn03zES57W5Vcbnjp0lIOgiZ58IWjrhj20hqjshibENkn9JzP~HVCwplYbGd-qL-0fCRMd9898l3-N03i9EiAC5LKVdmTCXRPIZdxC5So2e4N3PjbbgTL~nX6Gz10UCUahESDna9ECJfwGtnu5CllzE5j-8I3QZ8dhFNRKQR6ySJJv9mB~dqzkDxnNisJg__&Key-Pair-Id=APKAJE5CCD6X7MP6PTEA)
 			- Andriod上的像素密度(pixel density on Android)
+			  id:: 61d6f125-0fec-4315-89df-8b7ab503cbcb
 			  在开发 Android 应用时，使用 dp 在不同密度的屏幕上统一显示元素。
 				- dp 和屏幕密度
+				  background-color:: #533e7d
+				  dp 等于密度为 160 的屏幕上的一个物理像素。
+				  $$dp= (像素宽度 * 160 ) / 屏幕密度$$
+				  ![2022_01_11_image.png](https://cdn.logseq.com/%2F95018d4c-669b-4f2c-ba55-a52b94e8b69d41579740-2fe4-4672-a926-15b5d9bbf9ca2022_01_11_image.png?Expires=4795510083&Signature=HIrArLaY2PZnQERw8UXT-azd5Ne~iVNeCxUQk-UwlPfrdpQ0wGZBi7V41JkuTX0aB0WquXbdqrqVWEpp5A9qrOeoMym5M8RG-Sxj7zqWCnqam8vTh7MFhprl25fW~Gh7mNw-ppAkDZu7Cb2Ry8CCXTGlJ5MuIhKDQZAK4tVoH7Yd3QtysCD5afihaBYuSdf~nIGoUO7cBN8BaFS0qSbBq4Gm1SmvdOkfLrbVzDqaJwwleW919lkQflEF-5WnQ7yA-4GtOctzchixJCmTrDUvnNDXGuHgMA7LZvSdY8ULhwV3goVj5lOWiQSfVYPavyzboM6~2PfnL04GYEDCzin-Fw__&Key-Pair-Id=APKAJE5CCD6X7MP6PTEA)
+				- 可缩放像素（sp）
+				  background-color:: #533e7d
+				  可缩放像素（sp）与密度无关像素（dp）具有相同的功能，但适用于字体。sp 的默认值与 dp 的默认值一样。
+				  sp 与 dp 之间的主要差别在于 sp 保留了用户的字体设置。有较大文本设置的无障碍用户将看到字体大小符合他们的文字大小偏好。
 			- IOS上的像素密度(pixel density on IOS)
+			  IOS 使用逻辑分辨率（logical resolution）来确定分辨率，它以点（point）为单位来衡量其单位。
+				- 逻辑分辨率
+				- IOS 单位（Units for IOS）
 			- Web上的像素密度(pixel density on the web)
 		- 响应式布局网格(Responsive layout grid)
 		- 间距方法(Spacing method)
