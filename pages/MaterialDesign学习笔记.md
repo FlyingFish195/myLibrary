@@ -297,8 +297,15 @@
 			- IOS上的像素密度(pixel density on IOS)
 			  IOS 使用逻辑分辨率（logical resolution）来确定分辨率，它以点（point）为单位来衡量其单位。
 				- 逻辑分辨率
+				  在逻辑分辨率下，点（point）使用原生比例因子（Native Scale factor）进行缩放，该因子映射到设备的原生分辨率（native resolution）(以像素为单位)
 				- IOS 单位（Units for IOS）
+				  在为IOS设计时，使用单位pt（point）
+				  参考链接：[Displays](https://developer.apple.com/library/archive/documentation/DeviceInformation/Reference/iOSDeviceCompatibility/Displays/Displays.html)、[Guide to iPhone Resolutions](https://www.paintcodeapp.com/news/ultimate-guide-to-iphone-resolutions)
 			- Web上的像素密度(pixel density on the web)
+				- 逻辑分辨率（Logical resolution）
+				  使用设备的逻辑分辨率，它会缩放到设备的屏幕分辨率
+				- Web单位（Units for the web）
+				  在为Web设计时，使用单位px（pixel）。
 		- 响应式布局网格(Responsive layout grid)
 		- 间距方法(Spacing method)
 		- 组件行为(Component behavior)
